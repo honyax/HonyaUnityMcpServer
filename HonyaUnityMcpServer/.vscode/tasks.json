@@ -25,6 +25,23 @@
                 "kind": "test",
                 "isDefault": true
             }
-        }
+        },
+        {
+            "label": "build-release",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/HonyaUnityMcpServer.sln",
+                "--configuration",
+                "Release",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
     ]
 }
