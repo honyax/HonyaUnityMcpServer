@@ -91,4 +91,16 @@ namespace HonyaMcp
     {
         public int instanceId;
     }
+
+    [Serializable]
+    public class CreateScriptRequest : Request
+    {
+        public string scriptFileName;
+        public string sourceCode;
+    }
+
+    [Serializable]
+    public class CreateScriptResponse : Response
+    {
+    }
 }

@@ -1,5 +1,3 @@
-using System.Threading.Tasks;
-
 namespace HonyaMcp
 {
     public abstract class McpToolBase

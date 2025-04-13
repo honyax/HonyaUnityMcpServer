@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,6 +24,8 @@ namespace HonyaMcp
             tool = new CreatePrimitiveGameObjectTool();
             _tools.Add(tool.Name, tool);
             tool = new SetTransformTool();
+            _tools.Add(tool.Name, tool);
+            tool = new CreateScriptTool();
             _tools.Add(tool.Name, tool);
         }
 
