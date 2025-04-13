@@ -72,6 +72,7 @@ HonyaMcp/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 # Temporary auto-generated Android Assets
 HonyaMcp/[Aa]ssets/[Ss]treamingAssets/aa.meta
 HonyaMcp/[Aa]ssets/[Ss]treamingAssets/aa/*
-
-HonyaUnityMcpServer/bin/
-HonyaUnityMcpServer/obj/
+HonyaUnityMcpServer/HonyaUnityMcpServer.Tests/bin/
+HonyaUnityMcpServer/HonyaUnityMcpServer.Tests/obj/
+HonyaUnityMcpServer/HonyaUnityMcpServer/bin/
+HonyaUnityMcpServer/HonyaUnityMcpServer/obj/
