@@ -3,13 +3,13 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .utmp/
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+HonyaMcp/[Ll]ibrary/
+HonyaMcp/[Tt]emp/
+HonyaMcp/[Oo]bj/
+HonyaMcp/[Bb]uild/
+HonyaMcp/[Bb]uilds/
+HonyaMcp/[Ll]ogs/
+HonyaMcp/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -67,8 +67,11 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Packed Addressables
-/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+HonyaMcp/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
+HonyaMcp/[Aa]ssets/[Ss]treamingAssets/aa.meta
+HonyaMcp/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+HonyaUnityMcpServer/bin/
+HonyaUnityMcpServer/obj/

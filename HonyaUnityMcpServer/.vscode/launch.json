@@ -1,0 +1,37 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: HonyaUnityMcpServer (Server)", // サーバー起動用の構成名
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            // プロジェクトの DLL パスを指定します。bin/Debug/net7.0 は環境に合わせて調整が必要な場合があります。
+            "program": "${workspaceFolder}/bin/Debug/net7.0/HonyaUnityMcpServer.dll",
+            "args": [], // サーバー起動時は引数なし
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole", // または "integratedTerminal"
+            "logging": {
+                "moduleLoad": false // モジュールロードのログを無効化
+            }
+        },
+        {
+            "name": "C#: HonyaUnityMcpServer (Client Test)", // クライアントテスト用の構成名
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/bin/Debug/net7.0/HonyaUnityMcpServer.dll",
+            "args": ["--run-client-test"], // クライアントテスト実行用の引数
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal", // クライアントテストは入力が必要なため integratedTerminal を推奨
+            "logging": {
+                "moduleLoad": false
+            }
+        }
+    ]
+}

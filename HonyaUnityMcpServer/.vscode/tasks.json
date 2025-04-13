@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build", // launch.json の preLaunchTask で参照されるラベル
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/HonyaUnityMcpServer.csproj", // プロジェクトファイルのパスを指定
+                // Specify the output directory.
+                // "/property:GenerateFullPaths=true", // オプション: フルパスを生成
+                "/consoleloggerparameters:NoSummary" // オプション: ビルドサマリーを非表示
+            ],
+            "problemMatcher": "$msCompile" // C#コンパイラのエラーを問題パネルに表示
+        }
+    ]
+}
