@@ -7,7 +7,7 @@ namespace HonyaUnityMcpServer.Libs;
 
 public class HonyaMcpClient
 {
-    private static readonly TimeSpan ResponseTimeout = TimeSpan.FromSeconds(10); // タイムアウト時間を設定 (例: 10秒)
+    private static readonly TimeSpan ResponseTimeout = TimeSpan.FromSeconds(60); // タイムアウト時間を設定 (例: 60秒)
     private static readonly JsonSerializerOptions options = new JsonSerializerOptions
     {
         IncludeFields = true,

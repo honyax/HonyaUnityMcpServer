@@ -16,14 +16,17 @@ public class CreateScriptToolTest
     public async Task MainTest()
     {
         var response = await CreateScriptTool.HumsCreateScript("Example",
-        "public static class Example\n" +
-        "{\n" +
-        "    public static void Hoge()\n" +
-        "    {\n" +
-        "        UnityEngine.Debug.Log(\"HogeHoge\");\n" +
-        "    }\n" +
-        "}\n"
-        );
+        @"
+public static class Example
+{
+    public static void Hoge()
+    {
+        UnityEngine.Debug.Log(""HogeHoge"");
+    }
+}
+");
         _output.WriteLine($"Result:{response.result}");
+
+        await Task.Delay(5000);
     }
 }
