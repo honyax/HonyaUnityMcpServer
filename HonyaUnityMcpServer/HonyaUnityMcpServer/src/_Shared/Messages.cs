@@ -103,4 +103,17 @@ namespace HonyaMcp
     public class CreateScriptResponse : Response
     {
     }
+
+    [Serializable]
+    public class CreateScriptConfirmRequest : Request
+    {
+        public string scriptFileName;
+    }
+
+    [Serializable]
+    public class CreateScriptConfirmResponse : Response
+    {
+        public bool compileFinished;
+        public bool hasCompileError;
+    }
 }

@@ -27,17 +27,30 @@ namespace HonyaMcp
             _tools.Add(tool.Name, tool);
             tool = new CreateScriptTool();
             _tools.Add(tool.Name, tool);
+            tool = new CreateScriptConfirmTool();
+            _tools.Add(tool.Name, tool);
         }
 
         public void Execute(McpMessage message, Action<Response> onCompleted)
         {
             if (_tools.TryGetValue(message.type, out var tool))
             {
-                EditorApplication.delayCall += () =>
+                if (tool.IsAsync)
                 {
-                    var result = tool.Execute(message.content);
-                    onCompleted(result);
-                };
+                    EditorApplication.delayCall += async () =>
+                    {
+                        var result = await tool.ExecuteAsync(message.content);
+                        onCompleted(result);
+                    };
+                }
+                else
+                {
+                    EditorApplication.delayCall += () =>
+                    {
+                        var result = tool.Execute(message.content);
+                        onCompleted(result);
+                    };
+                }
             }
             else
             {
