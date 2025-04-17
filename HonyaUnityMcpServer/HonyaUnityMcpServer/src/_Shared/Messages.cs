@@ -116,4 +116,16 @@ namespace HonyaMcp
         public bool compileFinished;
         public bool hasCompileError;
     }
+
+    [Serializable]
+    public class AttachComponentRequest : Request
+    {
+        public string componentName;
+        public string gameObjectName;
+    }
+
+    [Serializable]
+    public class AttachComponentResponse : Response
+    {
+    }
 }

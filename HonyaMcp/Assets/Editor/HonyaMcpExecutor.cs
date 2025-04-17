@@ -29,6 +29,8 @@ namespace HonyaMcp
             _tools.Add(tool.Name, tool);
             tool = new CreateScriptConfirmTool();
             _tools.Add(tool.Name, tool);
+            tool = new AttachComponentTool();
+            _tools.Add(tool.Name, tool);
         }
 
         public void Execute(McpMessage message, Action<Response> onCompleted)

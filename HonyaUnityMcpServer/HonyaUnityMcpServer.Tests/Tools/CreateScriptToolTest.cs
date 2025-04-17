@@ -17,11 +17,13 @@ public class CreateScriptToolTest
     {
         var response = await CreateScriptTool.HumsCreateScript("Example",
         @"
-public static class Example
+using UnityEngine;
+
+public class Example : MonoBehaviour
 {
-    public static void Hoge()
+    public void Start()
     {
-        UnityEngine.Debug.Log(""HogeHoge"");
+        Debug.Log(""Start Example"");
     }
 }
 ");
