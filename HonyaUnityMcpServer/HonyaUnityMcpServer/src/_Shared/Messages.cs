@@ -128,4 +128,18 @@ namespace HonyaMcp
     public class AttachComponentResponse : Response
     {
     }
+
+    [Serializable]
+    public class AssignComponentFieldRequest : Request
+    {
+        public string targetGameObjectName;
+        public string componentTypeName;
+        public string fieldName;
+        public string assignGameObjectName;
+    }
+
+    [Serializable]
+    public class AssignComponentFieldResponse : Response
+    {
+    }
 }

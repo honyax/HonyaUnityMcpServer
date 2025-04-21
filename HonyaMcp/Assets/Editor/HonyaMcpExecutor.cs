@@ -31,6 +31,8 @@ namespace HonyaMcp
             _tools.Add(tool.Name, tool);
             tool = new AttachComponentTool();
             _tools.Add(tool.Name, tool);
+            tool = new AssignComponentFieldTool();
+            _tools.Add(tool.Name, tool);
         }
 
         public void Execute(McpMessage message, Action<Response> onCompleted)
