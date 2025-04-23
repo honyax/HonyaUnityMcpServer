@@ -21,7 +21,7 @@ namespace HonyaMcp
 
                 if (go == null && !string.IsNullOrEmpty(name))
                 {
-                    go = GameObject.Find(name);
+                    go = HonyaUtils.FindObject(name);
                     if (go != null)
                     {
                         Debug.Log($"GameObject with name '{name}' found instead of InstanceID {instanceId}.");

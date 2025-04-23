@@ -28,7 +28,7 @@ namespace HonyaMcp
                     return new ErrorResponse { result = false, message = "Component name is not specified." };
                 }
 
-                var gameObject = GameObject.Find(gameObjectName);
+                var gameObject = HonyaUtils.FindObject(gameObjectName);
                 if (gameObject == null)
                 {
                     Debug.LogError($"GameObject '{gameObjectName}' not found.");

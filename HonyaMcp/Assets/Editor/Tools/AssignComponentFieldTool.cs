@@ -17,7 +17,7 @@ namespace HonyaMcp
             var fieldName = message.fieldName;
             var assignGameObjectName = message.assignGameObjectName;
 
-            var targetObj = GameObject.Find(targetGameObjectName);
+            var targetObj = HonyaUtils.FindObject(targetGameObjectName);
             if (targetObj == null)
             {
                 var errorMessage = $"GameObject '{targetGameObjectName}' not found in scene.";
@@ -25,7 +25,7 @@ namespace HonyaMcp
                 throw new Exception(errorMessage);
             }
 
-            var assignObj = GameObject.Find(assignGameObjectName);
+            var assignObj = HonyaUtils.FindObject(assignGameObjectName);
             if (assignObj == null)
             {
                 var errorMessage = $"GameObject '{assignGameObjectName}' not found in scene.";

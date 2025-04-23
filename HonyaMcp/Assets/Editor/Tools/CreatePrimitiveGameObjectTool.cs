@@ -66,7 +66,7 @@ namespace HonyaMcp
                 {
                     if (!message.parentName.IsNullOrEmpty())
                     {
-                        var parentGo = GameObject.Find(message.parentName);
+                        var parentGo = HonyaUtils.FindObject(message.parentName);
                         if (parentGo != null)
                         {
                             go.transform.parent = parentGo.transform;

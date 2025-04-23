@@ -144,4 +144,15 @@ namespace HonyaMcp
     public class AssignComponentFieldResponse : Response
     {
     }
+
+    [Serializable]
+    public class ActivateGameObjectRequest : Request
+    {
+        public string name;
+        public bool active;
+    }
+    [Serializable]
+    public class ActivateGameObjectResponse : Response
+    {
+    }
 }
