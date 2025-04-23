@@ -15,7 +15,7 @@ public class AssignComponentFieldToolTest
     [Fact]
     public async Task MainTest()
     {
-        var response = await AssignComponentFieldTool.HumsAssignComponentField(
+        var response = await AssignComponentFieldTool.HonyaAssignComponentField(
             "Hoge",
             "HogeClass",
             "fuga2",

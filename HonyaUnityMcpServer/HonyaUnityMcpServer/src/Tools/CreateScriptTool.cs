@@ -9,7 +9,7 @@ namespace HonyaUnityMcpServer.Tools;
 public static class CreateScriptTool
 {
     [McpServerTool, Description("C#のソースコードのスクリプトファイルを作成する")]
-    public static async Task<CreateScriptConfirmResponse> HumsCreateScript(
+    public static async Task<CreateScriptConfirmResponse> HonyaCreateScript(
         [Description("C#のスクリプトファイル名")]
         string scriptFileName,
         [Description("スクリプトファイルのソースコード")]

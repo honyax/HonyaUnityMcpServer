@@ -9,7 +9,7 @@ namespace HonyaUnityMcpServer.Tools;
 public static class AttachComponentTool
 {
     [McpServerTool, Description("コンポーネントを GameObject にアタッチする")]
-    public static async Task<AttachComponentResponse> HumsAttachComponent(
+    public static async Task<AttachComponentResponse> HonyaAttachComponent(
         [Description("アタッチするコンポーネント名")]
         string componentName,
         [Description("アタッチ先の GameObject 名")]

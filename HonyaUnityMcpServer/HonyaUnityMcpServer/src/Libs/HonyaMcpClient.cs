@@ -141,7 +141,7 @@ public class HonyaMcpClient
         }
         finally
         {
-            Program.Logger.Log($"HumsCreateGameObject DisconnectAsync");
+            Program.Logger.Log($"HonyaMcpClient DisconnectAsync");
             await ws.DisconnectAsync();
 
             // 念のため、ここでもハンドラを解除

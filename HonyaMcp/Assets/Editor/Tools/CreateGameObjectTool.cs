@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using WebSocketSharp;
 
 namespace HonyaMcp
 {
@@ -14,6 +15,14 @@ namespace HonyaMcp
                 var message = JsonUtility.FromJson<CreatePrimitiveGameObjectRequest>(content);
                 var createdName = string.IsNullOrEmpty(message.name) ? "GameObject" : message.name;
                 var go = new GameObject(createdName);
+                if (!message.parentName.IsNullOrEmpty())
+                {
+                    var parentGo = GameObject.Find(message.parentName);
+                    if (parentGo != null)
+                    {
+                        go.transform.parent = parentGo.transform;
+                    }
+                }
                 Debug.Log($"Created GameObject:{go.name} on main thread");
                 return new CreateGameObjectResponse
                 {

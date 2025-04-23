@@ -15,7 +15,7 @@ public class AttachComponentToolTest
     [Fact]
     public async Task MainTest()
     {
-        var response = await AttachComponentTool.HumsAttachComponent("Example", "Sphere");
+        var response = await AttachComponentTool.HonyaAttachComponent("Example", "Sphere");
         _output.WriteLine($"Result:{response.result}");
 
         await Task.CompletedTask;

@@ -9,7 +9,7 @@ namespace HonyaUnityMcpServer.Tools;
 public static class AssignComponentFieldTool
 {
     [McpServerTool, Description("コンポーネントのフィールドに GameObject にアサインする")]
-    public static async Task<AssignComponentFieldResponse> HumsAssignComponentField(
+    public static async Task<AssignComponentFieldResponse> HonyaAssignComponentField(
         [Description("コンポーネントがアタッチされている GameObject 名")]
         string targetGameObjectName,
         [Description("アタッチされているコンポーネントのタイプ名")]

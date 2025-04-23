@@ -70,13 +70,6 @@ namespace HonyaMcp
                     throw new Exception(errorMessage);
                 }
 
-                if (field.FieldType != typeof(Component))
-                {
-                    var errorMessage = $"Field '{fieldName}' is not of Component type.";
-                    Debug.LogError(errorMessage);
-                    throw new Exception(errorMessage);
-                }
-
                 // Undoに登録
                 Undo.RecordObject(component, "Assign Component Reference");
 

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using WebSocketSharp;
 
 namespace HonyaMcp
 {
@@ -63,6 +64,14 @@ namespace HonyaMcp
 
                 if (go != null)
                 {
+                    if (!message.parentName.IsNullOrEmpty())
+                    {
+                        var parentGo = GameObject.Find(message.parentName);
+                        if (parentGo != null)
+                        {
+                            go.transform.parent = parentGo.transform;
+                        }
+                    }
                     Debug.Log($"Created GameObject: {go.name} of type {message.type} on main thread");
                     return new CreatePrimitiveGameObjectResponse
                     {

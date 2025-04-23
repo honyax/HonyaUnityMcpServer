@@ -15,7 +15,7 @@ public class CreateScriptToolTest
     [Fact]
     public async Task MainTest()
     {
-        var response = await CreateScriptTool.HumsCreateScript("Example",
+        var response = await CreateScriptTool.HonyaCreateScript("Example",
         @"
 using UnityEngine;
 

@@ -25,6 +25,7 @@ namespace HonyaMcp
     public class CreateGameObjectRequest : Request
     {
         public string name;
+        public string parentName;
     }
 
     [Serializable]
@@ -50,6 +51,7 @@ namespace HonyaMcp
     {
         public PrimitiveType type;
         public string name;
+        public string parentName;
     }
     [Serializable]
     public class CreatePrimitiveGameObjectResponse : Response

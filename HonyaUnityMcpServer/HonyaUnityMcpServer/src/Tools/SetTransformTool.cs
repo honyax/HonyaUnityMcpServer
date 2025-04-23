@@ -9,7 +9,7 @@ namespace HonyaUnityMcpServer.Tools;
 public static class SetTransformTool
 {
     [McpServerTool, Description("GameObjectのTransformを設定する")]
-    public static async Task<SetTransformResponse> HumsSetTransform(
+    public static async Task<SetTransformResponse> HonyaSetTransform(
         [Description("GameObjectのインスタンスID")]
         int instanceId,
         [Description("GameObjectの名前")]
