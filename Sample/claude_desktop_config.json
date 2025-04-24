@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "HonyaUnityMcpServer": {
+      "command": "C:/var/GitHub/HonyaUnityMcpServer/HonyaUnityMcpServer/HonyaUnityMcpServer/bin/Release/net7.0/HonyaUnityMcpServer.exe"
+    }
+  }
+}
