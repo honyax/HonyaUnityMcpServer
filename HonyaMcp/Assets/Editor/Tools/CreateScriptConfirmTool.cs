@@ -50,10 +50,11 @@ namespace HonyaMcp
             catch (Exception ex)
             {
                 Debug.LogError($"Failed to check script compilation status: {ex.Message}\n{ex.StackTrace}");
-                return new ErrorResponse
+                return new CreateScriptConfirmResponse
                 {
                     result = false,
-                    message = $"Failed to check script compilation status: {ex.Message}",
+                    compileFinished = false,
+                    hasCompileError = true
                 };
             }
         }

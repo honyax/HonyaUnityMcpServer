@@ -16,6 +16,7 @@ namespace HonyaMcp
             var componentTypeName = message.componentTypeName;
             var fieldName = message.fieldName;
             var assignGameObjectName = message.assignGameObjectName;
+            Debug.Log($"AssignComponentField targetGameObjectName:{targetGameObjectName} componentTypeName:{componentTypeName} fieldName:{fieldName} assignGameObjectName:{assignGameObjectName}");
 
             var targetObj = HonyaUtils.FindObject(targetGameObjectName);
             if (targetObj == null)
@@ -52,6 +53,7 @@ namespace HonyaMcp
                     throw new Exception(errorMessage);
                 }
 
+                Debug.Log($"targetObj:{targetObj.name} GetComponent:{componentType}");
                 var component = targetObj.GetComponent(componentType);
                 if (component == null)
                 {
@@ -74,7 +76,67 @@ namespace HonyaMcp
                 Undo.RecordObject(component, "Assign Component Reference");
 
                 // 値を設定
-                field.SetValue(component, assignObj);
+                Debug.Log($"assignObj:{assignObj.name} GetComponent:{field.FieldType}");
+                if (field.FieldType.IsArray)
+                {
+                    // 配列の要素タイプを取得
+                    var elementType = field.FieldType.GetElementType();
+
+                    // 現在のフィールド値（配列）を取得
+                    Array currentArray = (Array)field.GetValue(component);
+
+                    // 新しい配列を作成（サイズを1つ増やす）
+                    Array newArray = Array.CreateInstance(elementType, currentArray != null ? currentArray.Length + 1 : 1);
+
+                    // 既存の要素をコピー
+                    if (currentArray != null)
+                    {
+                        Array.Copy(currentArray, newArray, currentArray.Length);
+                    }
+
+                    // 要素タイプのコンポーネントを取得
+                    if (elementType == typeof(GameObject))
+                    {
+                        // 新しい要素を配列の最後に追加
+                        newArray.SetValue(assignObj, newArray.Length - 1);
+                    }
+                    else
+                    {
+                        var elementComponent = assignObj.GetComponent(elementType);
+                        if (elementComponent == null)
+                        {
+                            var errorMessage = $"Type '{elementType}' not found in component '{assignObj.name}'.";
+                            Debug.LogError(errorMessage);
+                            throw new Exception(errorMessage);
+                        }
+
+                        // 新しい要素を配列の最後に追加
+                        newArray.SetValue(elementComponent, newArray.Length - 1);
+                    }
+
+                    // コンポーネントのフィールドに新しい配列を設定
+                    field.SetValue(component, newArray);
+                }
+                else
+                {
+                    // 通常の処理（配列でない場合）
+                    if (field.FieldType == typeof(GameObject))
+                    {
+                        field.SetValue(component, assignObj);
+                    }
+                    else
+                    {
+                        var assignComponent = assignObj.GetComponent(field.FieldType);
+                        if (assignComponent == null)
+                        {
+                            var errorMessage = $"Type '{field.FieldType}' not found in component '{assignObj.name}'.";
+                            Debug.LogError(errorMessage);
+                            throw new Exception(errorMessage);
+                        }
+
+                        field.SetValue(component, assignComponent);
+                    }
+                }
 
                 // 変更をマーク
                 EditorUtility.SetDirty(component);
